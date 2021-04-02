@@ -1,5 +1,4 @@
 *.npy
-*.pth
 *.log
 *.pyc
 .idea/**/workspace.xml
