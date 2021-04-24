@@ -1,16 +1,16 @@
 # Hydra configuration file for training
 
 train:
-  imgs: 'data/train_imgs/'    #
-  mpms: 'data/train_mpms/'    #
-  itvs: [1, 3, 5, 7, 9]                   # Multiple patterns are OK like [1, 3, 5, 7, 9]
-  epochs: 300                  # Number of epoch
-  batch_size: 16               # Batch size
+  imgs: 'cell_data/train_imgs/'    #
+  mpms: 'cell_data/train_mpms/'    #
+  itvs: [1]                   # Multiple patterns are OK like [1, 3, 5, 7, 9]
+  epochs: 200                 # Number of epoch
+  batch_size: 8               # Batch size
   lr: 0.0001                  # Learning rate of Adam
 
 eval:
-  imgs: 'data/eval_imgs/'     # None is OK. In that case, eval.rate in the training data is used for evaluation.
-  mpms: 'data/eval_mpms_parallel/'     # None is OK
+  imgs: 'cell_data/eval_imgs/'     # None is OK. In that case, eval.rate in the training data is used for evaluation.
+  mpms: 'cell_data/eval_mpms/'     # None is OK
   itvs: [9]                   # Multiple patterns are OK like [1, 3, 5, 7, 9]
   rate: 0.2                   # Evaluation rate for no eval data
 
@@ -26,4 +26,4 @@ dataloader:
   width: 256                  # Number of pixel of crop width
 
 info:
-  direction: parallel         # Direction type of MPM
+  direction: peak         # Direction type of MPM
